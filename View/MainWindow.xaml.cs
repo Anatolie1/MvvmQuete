@@ -20,11 +20,17 @@ namespace MvvmQuete
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        private ShopViewModel ShopViewModel { get; set; }
         public MainWindow()
         {
-            DataContext = new ShopViewModel();
+            ShopViewModel = new ShopViewModel();
+            DataContext = ShopViewModel;
             InitializeComponent();
+        }
+
+        private void btn_AddShop(object sender, RoutedEventArgs e)
+        {
+            ShopViewModel.AddShop(Convert.ToInt32(txtShopId.Text), txtShopName.Text, txtCountry.Text);
         }
     }
 }

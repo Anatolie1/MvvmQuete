@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace MvvmQuete
 {
     public class ShopViewModel
     {
-        public List<Shop> Shops { get; set; } = new List<Shop>();
+        public ObservableCollection<Shop> Shops { get; set; }
 
         public ShopViewModel()
         {
-            IList<Shop> shopsList = new List<Shop>
+            Shops = new ObservableCollection<Shop>
             {
                 new Shop{ShopId=1,ShopName="MC",Country="FRANCE"},
                 new Shop{ShopId=2,ShopName="AL",Country="USA"},
@@ -20,7 +21,10 @@ namespace MvvmQuete
                 new Shop{ShopId=7,ShopName="WX",Country="AUSTRALIA"},
                 new Shop{ShopId=8,ShopName="AR",Country="INDIA"}
             };
-            Shops.AddRange(shopsList);
-        }        
+        }
+        public void AddShop(int ShopId, string ShopName, string Country)
+        {
+            Shops.Add(new Shop() { ShopId = ShopId, ShopName = ShopName, Country = Country });
+        }
     }
 }

@@ -29,6 +29,6 @@
         <Label Content="Country" Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="12,60,0,0" Name="label3" VerticalAlignment="Top" />
         <Button Content="AddShop" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="310,40,0,0" Name="btnAddShop"   
                 VerticalAlignment="Top" Width="141"
-                Command = "{Binding Path=UpdateCommad}" />
+                Command = "{Binding Path=UpdateCommad}" Click="btn_AddShop" />
     </Grid>
 </Window>
